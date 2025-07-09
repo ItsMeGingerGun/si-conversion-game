@@ -1,0 +1,10 @@
+{
+  "name": "SI Unit Converter",
+  "icon": "frame.png",
+  "start_url": "/",
+  "description": "Convert SI units in this fast-paced game",
+  "app": {
+    "bundle": "/",
+    "bundlePath": "https://your-app.vercel.app"
+  }
+}
