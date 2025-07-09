@@ -1,8 +1,8 @@
 'use client'; // Add this at the very top
 
 import { useState, useEffect } from 'react';
-import Timer from '@/components/Timer';
-import { generateQuestion, timeLimits } from '@/lib/gameLogic';
+import Timer from '../../../components/Timer';
+import { generateQuestion, timeLimits } from '../../../lib/gameLogic';
 import { useRouter } from 'next/navigation';
 
 export default function GamePage({ params }: { params: { diff: string } }) {
