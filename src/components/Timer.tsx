@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+'use client'; // Add this at the very top
 
+import { useEffect, useState } from 'react';
 export default function Timer({ 
   duration, 
   onEnd 
