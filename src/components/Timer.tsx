@@ -26,5 +26,5 @@ export default function Timer({
     return () => clearInterval(timer);
   }, [onEnd]);
 
-  return <div>Time: {timeLeft.toFixed(1)}s</div>;
+  return <div className="text-lg font-bold">Time: {timeLeft.toFixed(1)}s</div>;
 }
