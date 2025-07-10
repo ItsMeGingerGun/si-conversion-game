@@ -1,10 +1,29 @@
 {
-  "name": "SI Unit Converter",
-  "icon": "frame.png",
-  "start_url": "/",
-  "description": "Convert SI units in this fast-paced game",
+  "name": "SI Unit Challenge",
+  "icon": "https://your-app.vercel.app/frame.png",
+  "start_url": "https://your-app.vercel.app/frame",
+  "description": "Test your unit conversion skills!",
   "app": {
     "bundle": "/",
     "bundlePath": "https://your-app.vercel.app"
-  }
+  },
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "sizes": "1280x720",
+      "type": "image/png"
+    }
+  ]
 }
