@@ -6,27 +6,6 @@ import Leaderboard from '@/components/Leaderboard';
 import { generateQuestion, timeLimits } from '@/lib/gameLogic';
 import { useRouter } from 'next/navigation';
 
-export const metadata = {
-  openGraph: {
-    title: 'SI Unit Challenge',
-    description: 'Test your conversion skills!',
-    images: [
-      {
-        url: `${process.env.NEXT_PUBLIC_APP_URL}/frame-game.png`,
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
-  other: {
-    'fc:frame': 'vNext',
-    'fc:frame:image': `${process.env.NEXT_PUBLIC_APP_URL}/frame-game.png`,
-    'fc:frame:button:1': 'Play Again',
-    'fc:frame:button:1:action': 'post_redirect',
-    'fc:frame:button:2': 'Leaderboard',
-    'fc:frame:button:2:action': 'post_redirect',
-  },
-};
 
 export default function GamePage({ params }: { params: { diff: string } }) {
   const difficulty = params.diff as keyof typeof timeLimits;
