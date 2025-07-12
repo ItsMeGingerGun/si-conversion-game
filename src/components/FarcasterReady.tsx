@@ -1,17 +1,13 @@
 'use client';
-
 import { useEffect } from 'react';
-import { actions } from '@farcaster/mini-apps-sdk';
+import { actions } from '@farcasterxyz/mini-apps-sdk'; // Updated import
 
 export default function FarcasterReady() {
   useEffect(() => {
-    // Notify Farcaster that the app is ready
     actions.ready().then(() => {
       console.log('Farcaster SDK ready');
-    }).catch(error => {
-      console.error('Farcaster ready error:', error);
-    });
+    }).catch(console.error);
   }, []);
-
-  return null; // This component doesn't render anything
+  
+  return null;
 }
