@@ -10,7 +10,7 @@
     "fix-audit": "npm audit fix --force"
   },
   "dependencies": {
-    "@farcaster/mini-apps-sdk": "^1.0.0", // Added Farcaster SDK
+    "@farcaster/mini-apps-sdk": "^1.0.0", 
     "@neynar/nodejs-sdk": "^0.11.4",
     "@upstash/redis": "^1.23.0",
     "next": "14.2.3",
