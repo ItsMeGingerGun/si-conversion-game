@@ -6,8 +6,14 @@ import Leaderboard from '@/components/Leaderboard';
 import { generateQuestion, timeLimits } from '@/lib/gameLogic';
 import { useRouter } from 'next/navigation';
 
-
-export default function GamePage({ params }: { params: { diff: string } }) {
+// Add searchParams to the component props
+export default function GamePage({ 
+  params, 
+  searchParams 
+}: { 
+  params: { diff: string },
+  searchParams: { state?: string }
+}) {
   const difficulty = params.diff as keyof typeof timeLimits;
   const [question, setQuestion] = useState<any>(null);
   const [answer, setAnswer] = useState('');
@@ -15,6 +21,22 @@ export default function GamePage({ params }: { params: { diff: string } }) {
   const [gameOver, setGameOver] = useState(false);
   const router = useRouter();
 
+  // Get state from URL parameters
+  const state = searchParams.state || '';
+
+  // Add useEffect for state tracking
+  useEffect(() => {
+    if (state) {
+      console.log(`Starting game session: ${state}`);
+      // In a real app, you would send this to analytics:
+      // fetch('/api/analytics', {
+      //   method: 'POST',
+      //   body: JSON.stringify({ state, action: 'game_start', difficulty })
+      // });
+    }
+  }, [state, difficulty]);
+
+  // Game initialization
   useEffect(() => {
     newQuestion();
   }, []);
@@ -35,13 +57,17 @@ export default function GamePage({ params }: { params: { diff: string } }) {
 
   const endGame = () => {
     setGameOver(true);
-    // Submit score to leaderboard API
+    // Submit score to leaderboard API with state
     fetch('/api/leaderboard', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ difficulty, score })
+      body: JSON.stringify({ 
+        difficulty, 
+        score,
+        state // Include state in the leaderboard submission
+      })
     });
   };
 
@@ -79,6 +105,13 @@ export default function GamePage({ params }: { params: { diff: string } }) {
       </div>
       <Timer duration={timeLimits[difficulty]} onEnd={endGame} />
       <p className="mt-4 text-xl">Score: {score}</p>
+      
+      {/* Optional: Display session ID for debugging */}
+      {state && (
+        <div className="mt-4 text-sm text-gray-500">
+          Session: {state.substring(0, 8)}...
+        </div>
+      )}
     </div>
   );
 }
