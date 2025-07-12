@@ -1,4 +1,5 @@
 import './globals.css';
+import FarcasterReady from '@/components/FarcasterReady';
 
 export default function RootLayout({
   children,
@@ -7,7 +8,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50">{children}</body>
+      <body className="bg-gray-50">
+        {children}
+        <FarcasterReady />
+      </body>
     </html>
   );
 }
