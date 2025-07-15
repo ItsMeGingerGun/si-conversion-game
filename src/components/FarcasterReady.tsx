@@ -1,6 +1,6 @@
 'use client';
 import { useEffect } from 'react';
-import { actions } from '@farcasterxyz/mini-apps-sdk'; // Updated import
+import { actions } from '@farcaster/frame-sdk'; 
 
 export default function FarcasterReady() {
   useEffect(() => {
