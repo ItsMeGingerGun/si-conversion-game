@@ -5,6 +5,7 @@ import Timer from '@/components/Timer';
 import Leaderboard from '@/components/Leaderboard';
 import { generateQuestion, timeLimits } from '@/lib/gameLogic';
 import { useRouter } from 'next/navigation';
+import { Frame } from '@farcaster/frame-sdk'; // Correct import
 
 // Add searchParams to the component props
 export default function GamePage({ 
@@ -21,6 +22,13 @@ export default function GamePage({
   const [gameOver, setGameOver] = useState(false);
   const router = useRouter();
 
+  // Initialize Farcaster Frame SDK
+  useEffect(() => {
+    Frame.ready()
+      .then(() => console.log('Farcaster Frame SDK ready in game'))
+      .catch(console.error);
+  }, []);
+
   // Get state from URL parameters
   const state = searchParams.state || '';
 
@@ -28,11 +36,14 @@ export default function GamePage({
   useEffect(() => {
     if (state) {
       console.log(`Starting game session: ${state}`);
-      // In a real app, you would send this to analytics:
-      // fetch('/api/analytics', {
-      //   method: 'POST',
-      //   body: JSON.stringify({ state, action: 'game_start', difficulty })
-      // });
+      // Send game start event to analytics
+      fetch('/api/analytics', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ state, action: 'game_start', difficulty })
+      }).catch(console.error);
     }
   }, [state, difficulty]);
 
