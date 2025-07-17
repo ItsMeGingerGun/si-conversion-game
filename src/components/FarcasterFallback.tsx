@@ -1,13 +1,13 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Frame from '@farcaster/frame-sdk'; 
+import * as frame from '@farcaster/frame-sdk';
 
 export default function FarcasterFallback({ children }: { children: React.ReactNode }) {
   const [sdkReady, setSdkReady] = useState(false);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    Frame.ready()
+    frame.sdk.actions.ready()
       .then(() => setSdkReady(true))
       .catch(e => setError(e.message || 'SDK initialization failed'));
   }, []);
