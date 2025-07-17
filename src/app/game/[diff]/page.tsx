@@ -5,7 +5,7 @@ import Timer from '@/components/Timer';
 import Leaderboard from '@/components/Leaderboard';
 import { generateQuestion, timeLimits } from '@/lib/gameLogic';
 import { useRouter } from 'next/navigation';
-import { Frame } from '@farcaster/frame-sdk'; // Correct import
+import Frame from '@farcaster/frame-sdk'; // Default import
 
 // Add searchParams to the component props
 export default function GamePage({ 
