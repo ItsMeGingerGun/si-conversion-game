@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { Frame } from '@farcaster/frame-sdk'; // Correct import
+import Frame from '@farcaster/frame-sdk'; 
 
 export default function FarcasterFallback({ children }: { children: React.ReactNode }) {
   const [sdkReady, setSdkReady] = useState(false);
