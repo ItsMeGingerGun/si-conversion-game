@@ -5,9 +5,8 @@ import Timer from '@/components/Timer';
 import Leaderboard from '@/components/Leaderboard';
 import { generateQuestion, timeLimits } from '@/lib/gameLogic';
 import { useRouter } from 'next/navigation';
-import Frame from '@farcaster/frame-sdk'; // Default import
+import sdk from '@farcaster/frame-sdk'; // Default import
 
-// Add searchParams to the component props
 export default function GamePage({ 
   params, 
   searchParams 
@@ -24,7 +23,7 @@ export default function GamePage({
 
   // Initialize Farcaster Frame SDK
   useEffect(() => {
-    Frame.ready()
+    sdk.actions.ready()
       .then(() => console.log('Farcaster Frame SDK ready in game'))
       .catch(console.error);
   }, []);
