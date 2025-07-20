@@ -29,6 +29,8 @@ export default function Home() {
           <meta property="fc:frame:button:3:action" content="post_redirect" />
           <meta property="fc:frame:post_url" content={frameUrl} />
           <title>SI Unit Challenge</title>
+          <meta property="og:title" content="SI Unit Challenge" />
+          <meta property="og:description" content="Test your metric conversion skills against the clock!" />
         </head>
         <body>
           <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-4">
@@ -42,7 +44,7 @@ export default function Home() {
     );
   }
 
-  // Enhanced colorful landing page for browsers
+  // Standard landing page for browsers
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-4">
       <div className="max-w-4xl w-full text-center">
@@ -138,7 +140,7 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-6 mb-8">
-            <div className="bg-white/80 p-4 rounded-xl border-2 border-purple-300">
+            <div className="bg-white/80 p-4 rounded-xl border-2 border-purple-300 shadow-md">
               <h3 className="font-bold text-purple-700 mb-2">Share Frame</h3>
               <p className="text-gray-700 mb-3">Copy this link to share:</p>
               <div className="bg-gray-100 p-2 rounded-lg text-sm font-mono break-all">
@@ -146,7 +148,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="bg-white/80 p-4 rounded-xl border-2 border-blue-300">
+            <div className="bg-white/80 p-4 rounded-xl border-2 border-blue-300 shadow-md">
               <h3 className="font-bold text-blue-700 mb-2">Get Sharing Bonus</h3>
               <p className="text-gray-700 mb-3">Share your score to earn +5 points!</p>
               <div className="flex justify-center">
@@ -157,9 +159,9 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-4 rounded-xl max-w-md mx-auto">
+          <div className="bg-gradient-to-r from-amber-400 to-orange-500 p-4 rounded-xl max-w-md mx-auto shadow-lg">
             <h3 className="font-bold text-white text-xl mb-2">Top Sharers This Week</h3>
-            <div className="flex justify-around text-white">
+            <div className="flex justify-around text-white text-sm">
               <div>1. @MetricMaster - 42 shares</div>
               <div>2. @UnitConverter - 28 shares</div>
             </div>
