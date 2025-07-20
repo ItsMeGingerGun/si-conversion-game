@@ -32,8 +32,8 @@ export default function Home() {
           <meta property="og:title" content="SI Unit Challenge" />
           <meta property="og:description" content="Test your metric conversion skills against the clock!" />
         </head>
-        <body>
-          <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-4">
+        <body className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+          <div className="min-h-screen flex flex-col items-center justify-center p-4">
             <h1 className="text-4xl font-bold mb-4 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">
               SI Unit Challenge
             </h1>
@@ -46,7 +46,7 @@ export default function Home() {
 
   // Enhanced colorful landing page for browsers
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-4 flex flex-col items-center justify-center">
       <div className="max-w-4xl w-full text-center">
         <h1 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500">
           SI Unit Conversion Challenge
