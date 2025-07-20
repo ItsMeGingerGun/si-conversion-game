@@ -44,7 +44,7 @@ export default function Home() {
     );
   }
 
-  // Standard landing page for browsers
+  // Enhanced colorful landing page for browsers
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-4">
       <div className="max-w-4xl w-full text-center">
