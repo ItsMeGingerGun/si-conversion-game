@@ -35,19 +35,5 @@
     "payload": "eyJkb21haW4iOiJzaS1jb252ZXJzaW9uLWdhbWUudmVyY2VsLmFwcCJ9",
     "signature": "MHhkZWZiNTE3Y2JkZDYwZjhkYTFjNTM4MWQ2MGRhNWRiNDVhZTUxYTFiYWRmODhjNWZhNDE0OTZjNzllNTgzZDI1MTJhNTI2N2IwOWM5ZmQwYzllZWQxN2E0ZGM2YjJhYzkxODEzNjliNzJjMTliMTBjN2ZmZTBhMDZjOTk4NTBkYTFi"
   }
-  "frame": {
-    "name": "SI Unit Challenge",
-    "version": "1",
-    "iconUrl": "https://si-conversion-game.vercel.app/icon-512.png",
-    "homeUrl": "https://si-conversion-game.vercel.app/",
-    "description": "Test your metric conversion skills!",
-    "primaryCategory": "games",
-    "subtitle": "Test your metric conversion skills!",
-    "screenshotUrls": [
-      "https://si-conversion-game.vercel.app/screenshot1.png"
-    ],
-    "imageUrl": "https://si-conversion-game.vercel.app/screenshot1.png",
-    "splashImageUrl": "https://si-conversion-game.vercel.app/Splash.png",
-    "splashBackgroundColor": "#800080"
-  }
+
 }
