@@ -1,4 +1,4 @@
-import './src/app/globals.css';
+import './globals.css';
 import FarcasterReady from '@/components/FarcasterReady';
 
 export default function RootLayout({
