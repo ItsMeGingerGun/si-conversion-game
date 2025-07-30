@@ -1,6 +1,6 @@
 import './globals.css';
 import FarcasterReady from '@/components/FarcasterReady';
-import '../public/tailwind.css'; 
+
 
 export default function RootLayout({
   children,
