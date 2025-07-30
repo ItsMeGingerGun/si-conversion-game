@@ -87,8 +87,8 @@ Update `public/manifest.json` with your app details:
   "app": {
     "bundle": "/",
     "bundlePath": "https://your-app.vercel.app"
-  },
-  ...
+  }
+  
 }
 ```
 
