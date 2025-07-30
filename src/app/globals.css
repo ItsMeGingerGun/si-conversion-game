@@ -1,4 +1,6 @@
-@import "tailwindcss";
+/* Remove @import "tailwindcss" */
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
 /* Keep your custom styles */
@@ -33,7 +35,7 @@ body {
 }
 
 /* Typography */
-@layer utilities {
+@layer components {
   .typography {
     p {
       @apply text-base text-gray-700;
