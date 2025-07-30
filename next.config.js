@@ -15,6 +15,7 @@ module.exports = {
         headers: [
           { key: 'Cache-Control', value: 'no-store, max-age=0' },
           { key: 'Access-Control-Allow-Origin', value: '*' },
+          { key: 'Farcaster-Frame-Version', value: 'vNext' },
         ],
       },
     ];
