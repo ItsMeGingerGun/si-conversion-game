@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fix-audit": "npm audit fix --force",
-    "tailwind:build": "tailwindcss build -i ./src/app/globals.css -o ./public/tailwind.css"
+    "fix-audit": "npm audit fix --force"   
   },
   "dependencies": {
      "@farcaster/frame-sdk": "^0.0.60", 
