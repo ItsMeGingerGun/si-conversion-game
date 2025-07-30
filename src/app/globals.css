@@ -1,7 +1,8 @@
-@tailwind base;
-@tailwind components;
+/* Replace Tailwind imports with new format */
+@import "tailwindcss/preflight";
 @tailwind utilities;
 
+/* Keep your custom styles */
 :root {
   --tw-gradient-stops: transparent;
 }
@@ -13,7 +14,6 @@ body {
   margin: 0;
 }
 
-/* Add these gradient utilities */
 .bg-clip-text {
   -webkit-background-clip: text;
   background-clip: text;
@@ -27,9 +27,28 @@ body {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
-/* Smooth transitions */
 * {
   transition-property: background-color, border-color, transform, box-shadow;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add your typography styles */
+@layer utilities {
+  .typography {
+    p {
+      font-size: var(--text-base);
+      color: var(--color-gray-700);
+    }
+    h1 {
+      font-size: var(--text-2xl--line-height);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-gray-950);
+    }
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-gray-950);
+    }
+  }
 }
