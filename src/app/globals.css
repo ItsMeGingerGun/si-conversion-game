@@ -1,5 +1,4 @@
-/* Replace Tailwind imports with new format */
-@import "tailwindcss/preflight";
+@import "tailwindcss";
 @tailwind utilities;
 
 /* Keep your custom styles */
@@ -33,22 +32,17 @@ body {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Add your typography styles */
+/* Typography */
 @layer utilities {
   .typography {
     p {
-      font-size: var(--text-base);
-      color: var(--color-gray-700);
+      @apply text-base text-gray-700;
     }
     h1 {
-      font-size: var(--text-2xl--line-height);
-      font-weight: var(--font-weight-semibold);
-      color: var(--color-gray-950);
+      @apply text-2xl font-semibold text-gray-950;
     }
     h2 {
-      font-size: var(--text-xl);
-      font-weight: var(--font-weight-semibold);
-      color: var(--color-gray-950);
+      @apply text-xl font-semibold text-gray-950;
     }
   }
 }
