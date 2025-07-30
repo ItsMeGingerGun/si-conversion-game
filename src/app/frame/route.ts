@@ -20,13 +20,18 @@ const generateFrameHtml = (
     <meta property="fc:frame:button:${i + 1}" content="${text}">
     <meta property="fc:frame:button:${i + 1}:action" content="post_redirect">
   `).join('')}
+  
+  <!-- Add these Open Graph tags for better compatibility -->
+  <meta property="og:title" content="SI Unit Challenge">
+  <meta property="og:description" content="Test your metric conversion skills against the clock!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="${process.env.NEXT_PUBLIC_APP_URL}">
+  
+  <title>SI Unit Challenge</title>
 </head>
 <body>
   <h1>SI Unit Challenge</h1>
   <p>Test your conversion skills!</p>
-  <script type="text/javascript">
-    console.log("Frame loaded for SI Unit Challenge");
-  </script>
 </body>
 </html>
 `;
@@ -50,6 +55,9 @@ export async function GET(req: NextRequest) {
         headers: {
           'Content-Type': 'text/html',
           'Cache-Control': 'no-store, max-age=0',
+          // Add frame validator headers
+          'Access-Control-Allow-Origin': '*',
+          'Farcaster-Frame-Version': 'vNext'
         },
       }
     );
@@ -87,15 +95,21 @@ export async function POST(req: NextRequest) {
     if (buttonIndex === 2) difficulty = 'medium';
     if (buttonIndex === 3) difficulty = 'hard';
     
-    const redirectUrl = `${process.env.NEXT_PUBLIC_APP_URL}/game/${difficulty}?state=${state}`;
+    // Use URL constructor for safer URL handling
+    const redirectUrl = new URL(
+      `/game/${difficulty}`,
+      process.env.NEXT_PUBLIC_APP_URL
+    );
+    redirectUrl.searchParams.set('state', state);
     
-    return NextResponse.redirect(redirectUrl, 302);
+    return NextResponse.redirect(redirectUrl.toString(), 302);
   } catch (error) {
     console.error('Frame POST error:', error);
     return new NextResponse('Error processing frame action', {
       status: 400,
       headers: {
         'Content-Type': 'text/plain',
+        'Access-Control-Allow-Origin': '*'
       },
     });
   }
