@@ -10,6 +10,13 @@ module.exports = {
           { key: 'Cache-Control', value: 'public, max-age=3600' },
         ],
       },
+      {
+        source: '/api/frame',
+        headers: [
+          { key: 'Cache-Control', value: 'no-store, max-age=0' },
+          { key: 'Access-Control-Allow-Origin', value: '*' },
+        ],
+      },
     ];
   },
   reactStrictMode: true,
